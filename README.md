@@ -7,4 +7,4 @@
 
 ## 라이브 데모
  - 포트 폴리오 https://kst0561kw.github.io/portfoli2/
- - qr코드 
+ - qr코드  https://kst0561kw.github.io/portfoli2/qr.html
