@@ -6,5 +6,5 @@
  - al, ml, dl
 
 ## 라이브 데모
- - 포트 폴리오 https://g.co/gemini/share/402ea014991f
- - qr코드 https://g.co/gemini/share/3d91f71e3b79
+ - 포트 폴리오 
+ - qr코드 
