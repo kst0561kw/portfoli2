@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR 코드 생성기</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f2f5;
+            font-family: 'Arial', sans-serif;
+            color: #333;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 90%;
+            max-width: 400px;
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.1s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        #qrcode-container {
+            margin-top: 25px;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 220px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>QR 코드 생성기</h1>
+        <div class="input-group">
+            <input type="text" id="qrInput" placeholder="여기에 텍스트나 URL을 입력하세요.">
+        </div>
+        <button id="generateBtn">QR 코드 생성</button>
+        <div id="qrcode-container">
+            <!-- QR 코드가 여기에 생성됩니다 -->
+        </div>
+    </div>
+
+    <!-- qrcode.js 라이브러리 추가 -->
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+    <script>
+        const qrInput = document.getElementById('qrInput');
+        const generateBtn = document.getElementById('generateBtn');
+        const qrcodeContainer = document.getElementById('qrcode-container');
+
+        // Function to generate the QR code
+        function generateQRCode() {
+            // Clear previous QR code
+            qrcodeContainer.innerHTML = '';
+
+            const inputValue = qrInput.value.trim();
+
+            if (inputValue) {
+                new QRCode(qrcodeContainer, {
+                    text: inputValue,
+                    width: 200,
+                    height: 200,
+                    colorDark: "#000000",
+                    colorLight: "#ffffff",
+                    correctLevel: QRCode.CorrectLevel.H
+                });
+            } else {
+                qrcodeContainer.innerHTML = '<p style="color: #888;">텍스트를 입력해주세요.</p>';
+            }
+        }
+
+        // Event listeners
+        generateBtn.addEventListener('click', generateQRCode);
+        qrInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                generateQRCode();
+            }
+        });
+
+    </script>
+</body>
+</html>
