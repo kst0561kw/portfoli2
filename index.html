@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[내 이름] - AI 임베디드 개발자 포트폴리오</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* 커스텀 스타일 및 폰트 설정 */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .bg-pattern {
+            background-image: linear-gradient(to right, #2c3e50, #1a232f);
+        }
+        .hero-text {
+            animation: fadeIn 2s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .section-heading {
+            border-left: 4px solid #3498db;
+            padding-left: 1rem;
+        }
+        .project-card:hover .project-image {
+            transform: scale(1.05);
+        }
+        .project-image {
+            transition: transform 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Sticky Navigation Bar -->
+    <nav class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-gray-800">[포트 폴리오]</a>
+            <div class="space-x-4 md:space-x-6">
+                <a href="#about" class="text-gray-600 hover:text-blue-500 transition-colors duration-300">소개</a>
+                <a href="#projects" class="text-gray-600 hover:text-blue-500 transition-colors duration-300">프로젝트</a>
+                <a href="#contact" class="text-gray-600 hover:text-blue-500 transition-colors duration-300">연락처</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Hero Section -->
+    <header class="bg-pattern text-white py-20 md:py-32">
+        <div class="container mx-auto px-4 text-center hero-text">
+            <h1 class="text-3xl md:text-5xl font-bold mb-4">안녕하세요, [김 승태]입니다.</h1>
+            <p class="text-lg md:text-xl font-light mb-8">임베디드 시스템에 최적화된 AI를 개발하는<br class="md:hidden"> AI 임베디드 전문가입니다.</p>
+            <a href="#projects" class="inline-block bg-blue-500 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-blue-600 transition-all duration-300 transform hover:scale-105">프로젝트 보러가기</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-12">
+
+        <!-- About Me Section -->
+        <section id="about" class="bg-white p-8 md:p-12 rounded-xl shadow-lg mb-12">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6 section-heading">소개</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <p class="mb-4">안녕하세요. 저는 임베디드 시스템에서 구동하는 효율적인 인공지능 모델을 개발합니다. 제한된 리소스 환경에서도 최적의 성능을 끌어내는 것이 저의 전문 분야입니다.</p>
+                    <p>다양한 하드웨어 플랫폼에서 딥러닝 모델을 경량화하고 최적화한 경험을 가지고 있으며, 실제 제품에 적용 가능한 솔루션을 만드는 데 흥미를 느낍니다.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-3">기술 스택</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <span class="text-gray-600 font-medium">언어 & 프레임워크</span>
+                            <ul class="list-disc list-inside mt-1 space-y-1">
+                                <li>C++, Python</li>
+                                <li>TensorFlow Lite, PyTorch</li>
+                                <li>OpenCV, CUDA, TensorRT</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <span class="text-gray-600 font-medium">하드웨어</span>
+                            <ul class="list-disc list-inside mt-1 space-y-1">
+                                <li>Jetson Nano, Raspberry Pi</li>
+                                <li>ESP32, Arduino</li>
+                                <li>FPGA (기본 지식)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="mb-12">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6 section-heading">주요 프로젝트</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Project Card 1 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 transform hover:scale-105 project-card">
+                    <img src="https://placehold.co/600x400/2c3e50/ffffff?text=Project+1+Image" alt="프로젝트 이미지 1" class="w-full h-48 object-cover project-image">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">실시간 객체 인식 드론</h3>
+                        <p class="text-gray-600 text-sm mb-4">Jetson Nano에 최적화된 YOLO 모델을 탑재하여 실시간으로 객체를 인식하고 추적하는 자율 비행 드론을 개발했습니다.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-semibold text-blue-500 bg-blue-100 px-2 py-1 rounded-full">TensorFlow Lite</span>
+                            <a href="https://github.com/your-username/project-1-repo" target="_blank" class="text-blue-500 hover:text-blue-700 font-semibold transition-colors duration-300">
+                                GitHub
+                                <span class="text-sm">→</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 transform hover:scale-105 project-card">
+                    <img src="https://placehold.co/600x400/2980b9/ffffff?text=Project+2+Image" alt="프로젝트 이미지 2" class="w-full h-48 object-cover project-image">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">스마트팜 환경 제어 시스템</h3>
+                        <p class="text-gray-600 text-sm mb-4">라즈베리 파이에 센서 데이터를 기반으로 식물 성장에 최적화된 환경을 AI가 자동으로 제어하는 시스템을 구축했습니다.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-semibold text-green-500 bg-green-100 px-2 py-1 rounded-full">Python, PyTorch</span>
+                            <a href="https://github.com/your-username/project-2-repo" target="_blank" class="text-blue-500 hover:text-blue-700 font-semibold transition-colors duration-300">
+                                GitHub
+                                <span class="text-sm">→</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 3 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 transform hover:scale-105 project-card">
+                    <img src="https://placehold.co/600x400/e67e22/ffffff?text=Project+3+Image" alt="프로젝트 이미지 3" class="w-full h-48 object-cover project-image">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">음성 명령 기반 로봇 팔 제어</h3>
+                        <p class="text-gray-600 text-sm mb-4">ESP32에 음성 인식 모델을 포팅하여 사용자의 음성 명령에 따라 로봇 팔을 정밀하게 제어하는 임베디드 시스템을 구현했습니다.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-semibold text-yellow-500 bg-yellow-100 px-2 py-1 rounded-full">C++, Micro-Python</span>
+                            <a href="https://github.com/your-username/project-3-repo" target="_blank" class="text-blue-500 hover:text-blue-700 font-semibold transition-colors duration-300">
+                                GitHub
+                                <span class="text-sm">→</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="bg-white p-8 md:p-12 rounded-xl shadow-lg">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6 section-heading">연락처</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <p class="mb-4">저의 전문 분야에 대해 궁금한 점이 있거나 협업을 제안하고 싶으시면 언제든지 연락 주세요.</p>
+                    <p class="text-gray-600">이메일을 클릭하면 주소가 복사됩니다.</p>
+                    <a href="javascript:void(0)" id="email-link" class="inline-flex items-center text-blue-500 hover:underline mt-2">
+                        <span class="font-semibold text-lg">your-email@example.com</span>
+                    </a>
+                    <span id="copy-message" class="ml-4 text-sm text-green-600 opacity-0 transition-opacity duration-300">복사 완료!</span>
+                </div>
+                <div class="flex flex-col items-start space-y-2">
+                    <a href="https://github.com/your-username" target="_blank" class="text-gray-600 hover:text-gray-900 transition-colors duration-300">
+                        <span class="font-semibold">GitHub:</span> your-username
+                    </a>
+                    <a href="https://www.linkedin.com/in/your-linkedin" target="_blank" class="text-gray-600 hover:text-gray-900 transition-colors duration-300">
+                        <span class="font-semibold">LinkedIn:</span> your-linkedin
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white text-center py-6 mt-12">
+        <div class="container mx-auto px-4 text-sm">
+            &copy; 2024 [내 이름]. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- JavaScript for email copy -->
+    <script>
+        const emailLink = document.getElementById('email-link');
+        const copyMessage = document.getElementById('copy-message');
+        const emailAddress = 'kst0561kw@gmail.com'; // 실제 이메일 주소로 변경하세요.
+
+        emailLink.addEventListener('click', function(event) {
+            // Create a temporary input element
+            const tempInput = document.createElement('input');
+            tempInput.value = emailAddress;
+            document.body.appendChild(tempInput);
+
+            // Select the text and copy
+            tempInput.select();
+            document.execCommand('copy');
+
+            // Remove the temporary input
+            document.body.removeChild(tempInput);
+
+            // Show and hide the copy message
+            copyMessage.classList.remove('opacity-0');
+            copyMessage.classList.add('opacity-100');
+
+            setTimeout(() => {
+                copyMessage.classList.remove('opacity-100');
+                copyMessage.classList.add('opacity-0');
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
