@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>QR 코드 제네레이터</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <!-- QRCode.js 라이브러리 CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -29,16 +30,16 @@
 <body>
   <h2>QR 코드 제네레이터</h2>
   <input type="text" id="text" placeholder="텍스트 또는 URL 입력" />
-  <button onclick="generateQR()">생성</button>
+  <button id="makeBtn">생성</button>
 
   <div id="qrcode"></div>
 
   <script>
-    function generateQR() {
+    document.getElementById("makeBtn").addEventListener("click", function() {
       var qrContainer = document.getElementById("qrcode");
-      qrContainer.innerHTML = ""; // 이전 코드 제거
-      var text = document.getElementById("text").value;
-      if (text.trim() === "") {
+      qrContainer.innerHTML = ""; // 기존 QR코드 삭제
+      var text = document.getElementById("text").value.trim();
+      if (text === "") {
         alert("텍스트 또는 URL을 입력하세요!");
         return;
       }
@@ -50,7 +51,7 @@
         colorLight: "#ffffff",
         correctLevel: QRCode.CorrectLevel.H
       });
-    }
+    });
   </script>
 </body>
 </html>
